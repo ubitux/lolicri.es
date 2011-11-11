@@ -195,35 +195,6 @@ $l = array(
 
 ?><!DOCTYPE html>
 <html>
-<?php if (preg_match('/facebook.com/', $_SERVER['HTTP_REFERER']) || preg_match('/facebook.com/', $_SERVER['HTTP_USER_AGENT'])) { ?>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>No facebook.</title>
-		<link rel="icon" type="image/png" href="favicon.png" />
-		<style type="text/css">
-body { color: #C0C0C0; background-color: #101010; font-family: "sans-serif"; }
-div#main { width: 400px; border: 4px solid white; background-color: #202020; margin: auto; margin-top: 50px; padding: 20px; }
-		</style>
-	</head>
-	<body>
-		<div id="main">
-			<p>Hi,</p>
-			<p>
-				Please don't use facebook to come here.  Facebook is centralized, closed,
-				commercial, harmful, threatening freedom and certainly not essential as a
-				communication vehicle.
-			</p>
-			<p>Thanks.<p>
-			<hr />
-			<p>Salut,</p>
-			<p>
-				Merci de ne pas passer par facebook pour venir ici.  Facebook est centralisé
-				fermé, commercial, nuisible, liberticide et certainement pas indispensable en
-				tant que vecteur de communication.
-			</p>
-			<p>Merci.</p>
-		</div>
-<?php } else { ?>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Loli Cries!</title>
@@ -244,7 +215,6 @@ div#main { width: 400px; border: 4px solid white; background-color: #202020; mar
 		echo "\n\t\t\t</div>\n";
 	}
 	echo "\t\t\t<div style=\"clear:left;\"></div>\n\t\t</div>\n";
-}
 ?>
 		<footer>
 			<p class="csr">Comment/Submit/Request: #/dev/null @ irc.yozora-irc.net</p>
