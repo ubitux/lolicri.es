@@ -1,0 +1,68 @@
+@font-face {
+	font-family: JoyfulJuliana;
+	src: url('fnt/JoyfulJuliana.ttf');
+}
+
+body {
+	background-image: url('img/cloud.png');
+	font-family: JoyfulJuliana, 'Comic Sans MS';
+	font-size: 1.8em;
+	color: black;
+	padding-bottom: 30px;
+}
+
+footer {
+	clear: both;
+	font-size: .6em;
+	margin-top: 1em;
+	text-align: center;
+}
+
+footer p.csr { font-family: monospace; }
+
+div#m {
+	background-color: #aacaff;
+	border: 5px solid white;
+	width: 800px;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+}
+
+div.i {
+	clear: left;
+}
+div.i img {
+	float: left;
+	margin: 0px 40px 80px 30px;
+
+	box-shadow: 10px 10px 5px 0 #222;
+	-moz-box-shadow: 10px 10px 5px 0 #222;
+	-webkit-box-shadow: 10px 10px 5px 0 #222;
+}
+div.i h2 {
+	padding: 10px 20px 10px 20px;
+	font-size: 1.3em;
+	background-color: #76acde;
+
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+
+	box-shadow: 2px 2px 1px 0 #333;
+	-moz-box-shadow: 2px 2px 1px 0 #333;
+	-webkit-box-shadow: 2px 2px 1px 0 #333;
+}
+
+div.i h2:first-letter { font-size: 1.4em; }
+
+div.c { margin-bottom: .4em; font-style: italic; font-family: 'Comic Sans MS'; font-size: .9em; }
+div.c:before { content:'~'; }
+div.c:after { content:'~'; }
+
+h1 { font-size:3.5em; text-align: center; }
+span.h { color: pink; }
