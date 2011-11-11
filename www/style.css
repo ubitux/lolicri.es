@@ -1,27 +1,44 @@
-@font-face {
-	font-family: JoyfulJuliana;
-	src: url('fnt/JoyfulJuliana.ttf');
+@font-face { font-family: JoyfulJuliana; src: url('./fnt/JoyfulJuliana.ttf'); }
+@font-face { font-family: ReenieBeanie;  src: url('./fnt/ReenieBeanie.ttf');  }
+
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,
+section,summary {
+    display: block;
 }
 
-body {
-	background-image: url('img/cloud.png');
-	font-family: JoyfulJuliana, 'Comic Sans MS';
-	font-size: 1.8em;
-	color: black;
-	padding-bottom: 30px;
+
+body { background-image: url('./img/cloud.png'); }
+
+
+
+body>header>hgroup>h1 {
+    margin-top: .2em;
+    margin-bottom: .2em;
+    padding: 0;
+    font-family: JoyfulJuliana, 'Comic Sans MS';
+    text-align: center;
+    font-size: 5em;
+}
+body>header>hgroup>h1:before,
+body>header>hgroup>h1:after {
+    content: " ❤ ";
+    color: palevioletred;
+    font-size: .8em;
+    text-align: center;
+}
+body>header>hgroup>h2 {
+    margin-top: .2em;
+    margin-bottom: .6em;
+    padding: 0;
+    font-family: ReenieBeanie, 'Comic Sans MS';
+    font-weight: lighter;
+    text-align: center;
+    font-size: 2em;
 }
 
-footer {
-	clear: both;
-	font-size: .6em;
-	margin-top: 1em;
-	text-align: center;
-}
-
-footer p.csr { font-family: monospace; }
-
-div#m {
-	background-color: #aacaff;
+section {
+	background-color:rgba(170, 202, 255, 0.8);
 	border: 5px solid white;
 	width: 800px;
 	padding: 20px;
@@ -33,36 +50,83 @@ div#m {
 	-webkit-border-radius: 30px;
 }
 
-div.i {
-	clear: left;
-}
-div.i img {
-	float: left;
-	margin: 0px 40px 80px 30px;
+section#lolis>article { min-height: 18em; }
 
-	box-shadow: 10px 10px 5px 0 #222;
-	-moz-box-shadow: 10px 10px 5px 0 #222;
-	-webkit-box-shadow: 10px 10px 5px 0 #222;
-}
-div.i h2 {
-	padding: 10px 20px 10px 20px;
-	font-size: 1.3em;
-	background-color: #76acde;
+section#lolis>article a { text-decoration: none; color: black; }
+section#lolis a:hover { color: #404040; }
 
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-
-	box-shadow: 2px 2px 1px 0 #333;
-	-moz-box-shadow: 2px 2px 1px 0 #333;
-	-webkit-box-shadow: 2px 2px 1px 0 #333;
+section#lolis>article>header
+{
+    font-family: ReenieBeanie, 'Comic Sans MS';
+    background-color: #76acde;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    box-shadow: 2px 2px 1px 0 #333;
+    -moz-box-shadow: 2px 2px 1px 0 #333;
+    -webkit-box-shadow: 2px 2px 1px 0 #333;
 }
 
-div.i h2:first-letter { font-size: 1.4em; }
+article>header>hgroup
+{
+    margin: 1em;
+    padding: 0;
+}
 
-div.c { margin-bottom: .4em; font-style: italic; font-family: 'Comic Sans MS'; font-size: .9em; }
-div.c:before { content:'~'; }
-div.c:after { content:'~'; }
+article>header>hgroup>h1
+{
+    margin-left: .4em;
+    display: inline;
+}
+article>header>hgroup>h1 {
+    font-family: ReenieBeanie, 'Comic Sans MS';
+    font-size: 3em;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: #202020 1px 1px;
+}
 
-h1 { font-size:3.5em; text-align: center; }
-span.h { color: pink; }
+article>header>hgroup>h2
+{
+    margin: 0;
+    margin-left: .4em;
+    padding: 0;
+    display: inline;
+    font-size: 1.4em;
+    font-style: italic;
+}
+article>header>hgroup>h2:before { content: " ~ "; color: #444444; }
+article>header>hgroup>h1,article>header>hgroup>h2{ text-transform: capitalize; }
+
+article>img
+{
+    float: left;
+    width: auto;
+    margin-left: 1em;
+
+    box-shadow: 10px 10px 5px 0 #222;
+    -moz-box-shadow: 10px 10px 5px 0 #222;
+    -webkit-box-shadow: 10px 10px 5px 0 #222;
+}
+
+section#lolis>article>dl { margin-left: 22em; }
+
+article>dl>dt,article>dl>dd {margin: 0; padding: 0; }
+
+article>dl>dt
+{
+    font-style: italic;
+    font-family: 'Comic Sans MS';
+    font-size: 1.2em;
+}
+article>dl>dt:before,article>dl>dt:after { content:' ~ '; }
+
+article>dl>dd
+{
+    margin-top: .9em;
+}
+
+p.loli❤ { font-size: 1.1em; font-family: JoyfulJuliana, 'Comic Sans MS'; }
+
+footer { clear: both; margin-top: 1em; text-align: center; }
+footer>p { margin: 0; padding: 0; font-family: courier, monospace; font-size: .8em; }
