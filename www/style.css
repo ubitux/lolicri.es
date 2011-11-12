@@ -1,17 +1,12 @@
 @font-face { font-family: JoyfulJuliana; src: url('./fnt/JoyfulJuliana.ttf'); }
 @font-face { font-family: ReenieBeanie;  src: url('./fnt/ReenieBeanie.ttf');  }
 
-
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,
 section,summary {
     display: block;
 }
 
-
 body { background-image: url('./img/cloud.png'); }
-
-
-
 body>header>hgroup>h1 {
     margin-top: .2em;
     margin-bottom: .2em;
@@ -37,23 +32,18 @@ body>header>hgroup>h2 {
     font-size: 2em;
 }
 
-nav
-{
-  margin: 0 0 0 .6em;;
-  padding-bottom: .5em;
-  top: 0;
+nav {
+    margin: 0 0 0 .6em;;
+    padding-bottom: .5em;
+    top: 0;
 }
-
-nav>ul
-{
+nav>ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
     text-align: center;
 }
-
-nav>ul>li
-{
+nav>ul>li {
     display: inline;
     font-family: JoyfulJuliana, 'Comic Sans MS';
     font-size: 1.8em;
@@ -63,27 +53,23 @@ nav>ul>li>a { text-decoration: none; color: palevioletred; font-weight: 900;}
 nav>ul>li>a:hover { color: #404040; }
 nav>ul>li>a.active { color: #404040; }
 
-
 section {
-	background-color:rgba(170, 202, 255, 0.8);
-	border: 5px solid white;
-	width: 800px;
-	padding: 20px;
-	margin-left: auto;
-	margin-right: auto;
+    background-color:rgba(170, 202, 255, 0.8);
+    border: 5px solid white;
+    width: 800px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
 
-	border-radius: 30px;
-	-moz-border-radius: 30px;
-	-webkit-border-radius: 30px;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
 }
 
 section#lolis>article { min-height: 18em; }
-
 section#lolis>article a { text-decoration: none; color: black; }
 section#lolis a:hover { color: #404040; }
-
-section#lolis>article>header
-{
+section#lolis>article>header {
     font-family: ReenieBeanie, 'Comic Sans MS';
     background-color: #76acde;
     border-radius: 30px;
@@ -98,18 +84,15 @@ section#faq dl>dt { margin : .6em 0 0 0; padding: 0; }
 section#faq dl>dd { margin : .2em 0 0 0; padding: 0; }
 section#faq samp { margin: .5em 0 .5em 0; padding-left: .5em; border-left: 1px solid black; display : block; }
 
-section#notfound div
-{
+section#notfound div {
     background-image: url('img/himeko.png');
     background-position: bottom right;
     background-repeat: no-repeat;
     height: 400px;
     width: 100%;
 }
-
 section#notfound { padding-bottom: 0; }
-section#notfound div p
-{
+section#notfound div p {
     font-family: JoyfulJuliana, 'Comic Sans MS';
     font-size: 3em;
     margin: 0;
@@ -117,14 +100,11 @@ section#notfound div p
     text-align: center;
 }
 
-article>header>hgroup
-{
+article>header>hgroup {
     margin: 1em;
     padding: 0;
 }
-
-article>header>hgroup>h1
-{
+article>header>hgroup>h1 {
     margin-left: .4em;
     display: inline;
 }
@@ -135,7 +115,6 @@ article>header>hgroup>h1 {
     text-align: center;
     text-shadow: #202020 1px 1px;
 }
-
 article>header>hgroup>h2
 {
     margin: 0;
@@ -148,8 +127,7 @@ article>header>hgroup>h2
 article>header>hgroup>h2:before { content: " ~ "; color: #444444; }
 article>header>hgroup>h1,article>header>hgroup>h2{ text-transform: capitalize; }
 
-article>img
-{
+article>img {
     float: left;
     width: auto;
     margin-left: 1em;
@@ -162,20 +140,13 @@ article>img
 section#lolis>article>dl { margin-left: 22em; }
 
 article>dl>dt,article>dl>dd {margin: 0; padding: 0; }
-
-article>dl>dt
-{
+article>dl>dt {
     font-style: italic;
     font-family: 'Comic Sans MS';
     font-size: 1.2em;
 }
 article>dl>dt:before,article>dl>dt:after { content:' ~ '; }
-
-article>dl>dd
-{
-    margin-top: .9em;
-}
-
+article>dl>dd { margin-top: .9em; }
 article>dl>dd audio {
     height: 66px;
     width: 354px;
