@@ -126,6 +126,13 @@ article>dl>dd
     margin-top: .9em;
 }
 
+article>dl>dd audio {
+    height: 66px;
+    width: 354px;
+    border: none;
+    margin-top: -2.6em;
+}
+
 p.loli❤ { font-size: 1.1em; font-family: JoyfulJuliana, 'Comic Sans MS'; }
 
 footer { clear: both; margin-top: 1em; text-align: center; }
