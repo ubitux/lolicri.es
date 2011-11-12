@@ -37,6 +37,33 @@ body>header>hgroup>h2 {
     font-size: 2em;
 }
 
+nav
+{
+  margin: 0 0 0 .6em;;
+  padding-bottom: .5em;
+  top: 0;
+}
+
+nav>ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav>ul>li
+{
+    display: inline;
+    font-family: JoyfulJuliana, 'Comic Sans MS';
+    font-size: 1.8em;
+    margin-right: .6em;
+}
+nav>ul>li>a { text-decoration: none; color: palevioletred; font-weight: 900;}
+nav>ul>li>a:hover { color: #404040; }
+nav>ul>li>a.active { color: #404040; }
+
+
 section {
 	background-color:rgba(170, 202, 255, 0.8);
 	border: 5px solid white;
