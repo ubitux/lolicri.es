@@ -1,0 +1,47 @@
+<section id="faq">
+  <article>
+    <header>
+      <h1>General stuff</h1>
+    </header>
+    <dl>
+      <dt>Who are you?</dt>
+      <dd>A bunch of <del>perverted</del> geeks, nothing more.</dd>
+
+      <dt>Your ☠ site doesn't work with [not Firefox]</dt>
+      <dd>Short answer: we don't care.</dd>
+      <dd>Long answer: we don't care &amp; Firefox is free. Go and get it.</dd>
+    </dl>
+  </article>
+
+  <article>
+    <header>
+      <h1>Image &amp; sound stuff</h1>
+    </header>
+    <dl>
+      <dt>How do I extract my favorite loli shout?</dt>
+      <dd>If you are running Linux, it's quite easy. Just use the following
+	command: <samp>ffmpeg -i My-great-anime.avi -vn -ss 14:22.4 -t
+	00:00:03.230 -aq 7 -ac 2 -acodec libvorbis -y out.ogg</samp> and that's
+	all. <code>-ss</code> and <code>-t</code> are timestamps following
+	the <code>hh:mm:ss.ms</code> format.</dd>
+      <dd>You can use whichever method you like (or can use) as soon as you
+	ouput an Ogg/Vorbis file.</dd>
+      <dd>Note: if the video has multiple audio streams and the japanese one
+	isn't selected, what you're searching for is certainly the
+	<code>-map</code> option.</dd>
+
+      <dt>How do I extract my favorite loli pic?</dt>
+      <dd>On Linux – yeah, again – it's quite easy. You can use: <samp>
+	  ffmpeg -i My-great-anime.avi -ss 1094.1 -r 1 -f image2
+	  My-great-anime.png</samp>
+      </dd>
+
+      <dt>How do I convert my loli pic to the right resolution?</dt>
+      <dd>Linux answer, use <cite>ImageMagick</cite>: <samp>mogrify -resize 300x200
+      My-great-anime.png</samp></dd>
+
+      </dl>
+  </article>
+
+</section>
+

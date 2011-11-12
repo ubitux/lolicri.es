@@ -94,6 +94,29 @@ section#lolis>article>header
     -webkit-box-shadow: 2px 2px 1px 0 #333;
 }
 
+section#faq dl>dt { margin : .6em 0 0 0; padding: 0; }
+section#faq dl>dd { margin : .2em 0 0 0; padding: 0; }
+section#faq samp { margin: .5em 0 .5em 0; padding-left: .5em; border-left: 1px solid black; display : block; }
+
+section#notfound div
+{
+    background-image: url('img/himeko.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+}
+
+section#notfound { padding-bottom: 0; }
+section#notfound div p
+{
+    font-family: JoyfulJuliana, 'Comic Sans MS';
+    font-size: 3em;
+    margin: 0;
+    padding: 150px 250px 0px 0px;
+    text-align: center;
+}
+
 article>header>hgroup
 {
     margin: 1em;

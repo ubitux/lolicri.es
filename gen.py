@@ -70,9 +70,19 @@ def default_content(src):
 #     'title':  HTML title tag content.
 #
 pages = [{
+    'nav':    'Lolis',
     'header': 'The internet loli database',
     'fname': 'index.html',
     'func':   loli_list,
+},{
+    'nav':    'FAQ',
+    'title':  'FAQ',
+    'header': 'Freaking Atomic Questions',
+    'fname':  'faq.html'
+},{
+    'title':  'Page not found',
+    'header': 'Maho?',
+    'fname':  '404.html',
 }]
 
 def nav_gen(page_name):
