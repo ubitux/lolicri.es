@@ -49,7 +49,7 @@ TPL_LOLI = '''
 def get_loli_anchor(loli):
     key  = '%(anime)s-%(name)s' % loli
     norm = unicodedata.normalize('NFKD', key.decode('utf-8')).encode('ascii', 'ignore')
-    return '-'.join(norm.strip().lower().replace('/', ' ').split())
+    return '-'.join(norm.lower().split())
 
 def loli_list(src):
     from loli_list import lolis
