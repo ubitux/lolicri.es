@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import unicodedata
+
 TPL_BASE = '''<!DOCTYPE html>
 <html>
  <head>
@@ -33,10 +35,10 @@ TPL_CRY = '''
 <dd><audio preload="none" src="%s" controls="controls"></audio></dd>'''
 
 TPL_LOLI = '''
-<article>
+<article id="%(anchor)s">
  <header>
   <hgroup>
-   <h1>%(name)s</h1>
+   <h1><a href="#%(anchor)s">%(name)s</a></h1>
    <h2>%(anime)s</h2>
   </hgroup>
  </header>
@@ -44,11 +46,17 @@ TPL_LOLI = '''
  <dl>%(cries)s</dl>
 </article>'''
 
+def get_loli_anchor(loli):
+    key  = '%(anime)s-%(name)s' % loli
+    norm = unicodedata.normalize('NFKD', key.decode('utf-8')).encode('ascii', 'ignore')
+    return '-'.join(norm.strip().lower().replace('/', ' ').split())
+
 def loli_list(src):
     from loli_list import lolis
     content = '<section id="lolis">'
     for loli in lolis:
         loli['cries'] = ''.join(TPL_CRY % cry for cry in loli['cries'])
+        loli['anchor'] = get_loli_anchor(loli)
         content += TPL_LOLI % loli
     content += '</section>'
     return content
