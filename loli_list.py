@@ -168,4 +168,13 @@ lolis = [{
     'cries' : [
         ('Tutuluu', 'snd/Steins_Gate-Mayuri-Tutuluu.ogg'),
     ],
+},{
+    'name': 'Akari Mizunashi',
+    'anime': 'Aria the Animation',
+    'pic': 'img/Aria-Akari-Mizunashi.png',
+    'cries': [
+        ('Eeeh', 'snd/Aria-Akari-Mizunashi-eeeh.ogg'),
+        ('Eeehii', 'snd/Aria-Akari-Mizunashi-eeehii.ogg'),
+        ('Eeeeeeh', 'snd/Aria-Akari-Mizunashi-eeeeeeh.ogg'),
+    ],
 }]
