@@ -6,7 +6,10 @@ section,summary {
     display: block;
 }
 
-body { background-image: url('./img/cloud.png'); }
+body {
+    background-image: url('./img/cloud.png');
+    color: black;
+}
 body>header>hgroup>h1 {
     margin-top: .2em;
     margin-bottom: .2em;
