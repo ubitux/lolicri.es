@@ -177,4 +177,11 @@ lolis = [{
         ('Eeehii', 'snd/Aria-Akari-Mizunashi-eeehii.ogg'),
         ('Eeeeeeh', 'snd/Aria-Akari-Mizunashi-eeeeeeh.ogg'),
     ],
+},{
+    'name': 'Kirino',
+    'anime': 'Ore No Imouto Ga Konna Ni Kawaii Wake Ga Nai',
+    'pic': 'img/Ore_no_imouto_ga_konna_ni_kawaii_wake_ga_nai-Kousaka_Kirino.png',
+    'cries': [
+        ('Kira', 'snd/Ore_no_imouto_ga_konna_ni_kawaii_wake_ga_nai-Kousaka_Kirino-Kira.ogg'),
+    ],
 }]
