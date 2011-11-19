@@ -7,7 +7,8 @@ Server configuration
 
 How to add a cry?
 
-    * Update your local tree with `git pull`
+    * Update your local tree with `git pull` or clone the repository with
+      `git clone` if you don't have it already
     * Add the cry or cries in www/snd
     * Add the 300x200 picture in www/img
     * Run `git add` on the just added sound and images files
