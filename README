@@ -9,7 +9,7 @@ How to add a cry?
 
     * Update your local tree with `git pull`
     * Add the cry or cries in www/snd
-    * Add the 300x200 picture in www/pic
+    * Add the 300x200 picture in www/img
     * Run `git add` on the just added sound and images files
     * Edit loli_list.py and add/edit the loli entry
     * Run `make && firefox www/index.html` and check if everything is fine
