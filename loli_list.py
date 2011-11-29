@@ -184,4 +184,12 @@ lolis = [{
     'cries': [
         ('Kira', 'snd/Ore_no_imouto_ga_konna_ni_kawaii_wake_ga_nai-Kousaka_Kirino-Kira.ogg'),
     ],
+},{
+    'name': 'Chii',
+    'anime': 'Chobits',
+    'pic': 'img/Chobits-Chii.png',
+    'cries': [
+        ('Chii?',  'snd/Chobits-Chii-Chii.ogg'),
+        ('Chiiii', 'snd/Chobits-Chii-Chiiii.ogg'),
+    ],
 }]
