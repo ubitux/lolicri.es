@@ -5,16 +5,16 @@ lolis = [{
     'anime': 'Air',
     'pic': 'img/Air-Misuzu-Kamio.png',
     'cries': [
-        ('Gao', 'snd/Air-Misuzu-Kamio-Gao.ogg'),
+        ('Gao',    'snd/Air-Misuzu-Kamio-Gao.ogg'),
         ('Nihaha', 'snd/Air-Misuzu-Kamio-Nihaha.ogg'),
-        ('V!', 'snd/Air-Misuzu-Kamio-V.ogg'),
+        ('V!',     'snd/Air-Misuzu-Kamio-V.ogg'),
     ],
 },{
     'name': 'Lucy',
     'anime': 'Elfen Lied',
     'pic': 'img/Elfen-Lied-Nyu.png',
     'cries': [
-        ('Nyu!', 'snd/Elfen-Lied-Nyu.ogg'),
+        ('Nyu!',  'snd/Elfen-Lied-Nyu.ogg'),
         ('Nyuuu', 'snd/Elfen-Lied-Nyuuu.ogg'),
     ],
 },{
@@ -30,7 +30,7 @@ lolis = [{
     'pic': 'img/Nodame-Cantabile-Megumi-Noda.png',
     'cries': [
         ('Gyabou!', 'snd/Nodame-Cantabile-Megumi-Noda-Gyabou.ogg'),
-        ('Mugii!', 'snd/Nodame-Cantabile-Megumi-Noda-Mugii.ogg'),
+        ('Mugii!',  'snd/Nodame-Cantabile-Megumi-Noda-Mugii.ogg'),
     ],
 },{
     'name': 'Ahiru',
@@ -52,8 +52,8 @@ lolis = [{
     'anime': 'Eve no Jikan',
     'pic': 'img/Eve-ni-Jikan-Chie.png',
     'cries': [
-        ('Nya', 'snd/Eve-no-Jikan-Chie-Nya.ogg'),
-        ('Nya! Nya!', 'snd/Eve-no-Jikan-Chie-Nya-nya.ogg'),
+        ('Nya',        'snd/Eve-no-Jikan-Chie-Nya.ogg'),
+        ('Nya! Nya!',  'snd/Eve-no-Jikan-Chie-Nya-nya.ogg'),
         ('Neko dano!', 'snd/Eve-no-Jikan-Chie-Neko-dano.ogg'),
     ],
 },{
@@ -68,7 +68,7 @@ lolis = [{
     'anime': 'Popotan',
     'pic': 'img/Popotan-Mii.png',
     'cries': [
-        ('Puni Puni Da !', 'snd/Popotan-Mii-Puni-Puni.ogg'),
+        ('Puni Puni Da !',                      'snd/Popotan-Mii-Puni-Puni.ogg'),
         ('Pikohan Magicalu, Parareru Magicalu', 'snd/Popotan-Mii-Pikohan-Magicalu-Parareru-Magicalu.ogg'),
     ],
 },{
@@ -76,8 +76,8 @@ lolis = [{
     'anime': 'Paniponi Dash!',
     'pic': 'img/Paniponi-Dash-Himeko.png',
     'cries': [
-        ('Maho', 'snd/Paniponi-Dash-Himeko-Maho.ogg'),
-        ('Kawaii', 'snd/Paniponi-Dash-Himeko-Kawaii.ogg'),
+        ('Maho',         'snd/Paniponi-Dash-Himeko-Maho.ogg'),
+        ('Kawaii',       'snd/Paniponi-Dash-Himeko-Kawaii.ogg'),
         ('Omega Kawaii', 'snd/Paniponi-Dash-Himeko-Omega-Kawaii.ogg'),
     ],
 #},{
@@ -85,7 +85,7 @@ lolis = [{
 #    'anime': 'Cardcaptor Sakura',
 #    'pic': 'img/Cardcaptor-Sakura-Sakura.png',
 #    'cries': [
-#        ('Release !', 'snd/Cardcaptor-Sakura-Sakura-Release.ogg'),
+#        ('Release !',   'snd/Cardcaptor-Sakura-Sakura-Release.ogg'),
 #        ('Claw Card !', 'snd/Cardcaptor-Sakura-Sakura-Claw-Card.ogg'),
 #    ],
 },{
@@ -122,7 +122,7 @@ lolis = [{
     'pic': 'img/Kanon-Makoto-Sawatari.png',
     'cries': [
         ('Auu... Auu! Auuu...', 'snd/Kanon-Makoto-Sawatari-Auu-Auu-Auu.ogg'),
-        ('Auuuu! Auu...', 'snd/Kanon-Makoto-Sawatari-Auu-Auu.ogg'),
+        ('Auuuu! Auu...',       'snd/Kanon-Makoto-Sawatari-Auu-Auu.ogg'),
     ],
 },{
     'name': 'Ayu Tsukimiya',
@@ -136,7 +136,7 @@ lolis = [{
     'anime': 'Higurashi no Naku Koro ni Kai',
     'pic': 'img/Higurashi-Rena-Ryuuguu.png',
     'cries': [
-        ('Kawaii', 'snd/Higurashi-Rena-Ryuuguu-Kawaii.ogg'),
+        ('Kawaii',       'snd/Higurashi-Rena-Ryuuguu-Kawaii.ogg'),
         ('Omochi Kaeri', 'snd/Higurashi-Rena-Ryuuguu-Omochi-Kaeri.ogg'),
     ],
 },{
@@ -144,7 +144,7 @@ lolis = [{
     'anime': 'Alien Nine',
     'pic': 'img/Alien_9-Toomine_Kasumi.png',
     'cries': [
-        ('Nya', 'snd/Alien_9-Toomine_Kasumi-Nya.ogg'),
+        ('Nya',   'snd/Alien_9-Toomine_Kasumi-Nya.ogg'),
         ('Nya~a', 'snd/Alien_9-Toomine_Kasumi-Nyaaa.ogg'),
     ],
 },{
@@ -155,17 +155,17 @@ lolis = [{
         ('Garrr', 'snd/Azumanga_Daioh-Kagura-Garrr.ogg'),
     ],
 },{
-    'name'  : 'Pino',
-    'anime' : 'Ergo Proxy',
-    'pic'   : 'img/Ergo_Proxy-Pino.png',
-    'cries' : [
+    'name': 'Pino',
+    'anime': 'Ergo Proxy',
+    'pic': 'img/Ergo_Proxy-Pino.png',
+    'cries': [
         ('Ehehee', 'snd/Ergo_Proxy-Pino-Ehehee.ogg'),
     ],
 },{
-    'name'  : 'Mayuri',
-    'anime' : 'Steins;Gate',
+    'name': 'Mayuri',
+    'anime': 'Steins;Gate',
     'pic': 'img/Steins_Gate-Mayuri.png',
-    'cries' : [
+    'cries': [
         ('Tutuluu', 'snd/Steins_Gate-Mayuri-Tutuluu.ogg'),
     ],
 },{
@@ -173,8 +173,8 @@ lolis = [{
     'anime': 'Aria the Animation',
     'pic': 'img/Aria-Akari-Mizunashi.png',
     'cries': [
-        ('Eeeh', 'snd/Aria-Akari-Mizunashi-eeeh.ogg'),
-        ('Eeehii', 'snd/Aria-Akari-Mizunashi-eeehii.ogg'),
+        ('Eeeh',    'snd/Aria-Akari-Mizunashi-eeeh.ogg'),
+        ('Eeehii',  'snd/Aria-Akari-Mizunashi-eeehii.ogg'),
         ('Eeeeeeh', 'snd/Aria-Akari-Mizunashi-eeeeeeh.ogg'),
     ],
 },{
