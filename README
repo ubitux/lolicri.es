@@ -48,4 +48,4 @@ What is the Git setup of lolicri.es?
         cd $WWWROOT
         unset GIT_DIR
         git pull
-        make
+        make BASEURL=

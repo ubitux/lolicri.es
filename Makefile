@@ -1,2 +1,3 @@
+BASEURL := "$(shell pwd)/www"
 all:
-	@./gen.py
+	@./gen.py "$(BASEURL)"

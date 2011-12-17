@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import unicodedata
+import sys, unicodedata
 
 TPL_BASE = '''<!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@ TPL_BASE = '''<!DOCTYPE html>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>%(title)s</title>
   <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="%(baseurl)s/style.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
  </head>
  <body>
@@ -111,4 +111,5 @@ for page in pages:
     data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
     data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
     data['nav'    ] = nav_gen(dst)
+    data['baseurl'] = sys.argv[1]
     open(dst, 'w').write(TPL_BASE % data)
