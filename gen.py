@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from loli_list import lolis
 import sys, unicodedata
 
 TPL_BASE = '''<!DOCTYPE html>
@@ -11,6 +12,7 @@ TPL_BASE = '''<!DOCTYPE html>
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" type="text/css" href="%(baseurl)s/style.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="alternate" type="application/rss+xml" href="%(baseurl)s/rss.xml" />
  </head>
  <body>
   <header>
@@ -46,19 +48,47 @@ TPL_LOLI = '''
  <dl>%(cries)s</dl>
 </article>'''
 
+TPL_RSS = '''<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <title>%(title)s</title>
+  <link>http://lolicri.es</link>
+  <description>%(title)s</description>
+  <atom:link href="http://lolicri.es/rss.xml" rel="self" type="application/rss+xml" />
+  %(content)s
+ </channel>
+</rss>
+'''
+
+TPL_RSS_ITEM = '''
+  <item>
+   <title>%(title)s</title>
+   <link>%(link)s</link>
+   <guid>%(guid)s</guid>
+  </item>
+'''
+
 def get_loli_anchor(loli):
     key  = '%(anime)s-%(name)s' % loli
     norm = unicodedata.normalize('NFKD', key.decode('utf-8')).encode('ascii', 'ignore')
     return '-'.join(norm.lower().split())
 
 def loli_list(src):
-    from loli_list import lolis
     content = '<section id="lolis">'
     for loli in lolis:
         loli['cries'] = ''.join(TPL_CRY % cry for cry in loli['cries'])
         loli['anchor'] = get_loli_anchor(loli)
         content += TPL_LOLI % loli
     content += '</section>'
+    return content
+
+def rss_content(src):
+    content = ''
+    for loli in lolis[::-1]:
+        loli['title'] = 'New wild loli appears: %s' % loli['name']
+        loli['link']  = 'http://lolicri.es/#' + get_loli_anchor(loli)
+        loli['guid']  = loli['link']
+        content += TPL_RSS_ITEM % loli
     return content
 
 def default_content(src):
@@ -76,6 +106,7 @@ def default_content(src):
 #               read the content of the source file using "fname".
 #     'header': what appears as a sub title on top of the page (not mandatory)
 #     'title':  HTML title tag content.
+#     'tpl':    template to use if not TPL_BASE
 #
 pages = [{
     'nav':    'Lolis',
@@ -91,6 +122,10 @@ pages = [{
     'title':  'Page not found',
     'header': 'Maho?',
     'fname':  '404.html',
+},{
+    'fname':  'rss.xml',
+    'func':   rss_content,
+    'tpl':    TPL_RSS,
 }]
 
 def nav_gen(page_name):
@@ -112,4 +147,4 @@ for page in pages:
     data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
     data['nav'    ] = nav_gen(dst)
     data['baseurl'] = sys.argv[1]
-    open(dst, 'w').write(TPL_BASE % data)
+    open(dst, 'w').write(page.get('tpl', TPL_BASE) % data)
