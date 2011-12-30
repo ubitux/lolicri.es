@@ -10,9 +10,9 @@ TPL_BASE = '''<!DOCTYPE html>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>%(title)s</title>
   <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" type="text/css" href="%(baseurl)s/style.css" />
-  <link rel="icon" type="image/png" href="%(baseurl)s/favicon.png" />
-  <link rel="alternate" type="application/rss+xml" href="%(baseurl)s/rss.xml" />
+  <link rel="stylesheet" type="text/css"            href="%(baseurl)s/style.css" />
+  <link rel="icon"       type="image/png"           href="%(baseurl)s/favicon.png" />
+  <link rel="alternate"  type="application/rss+xml" href="%(baseurl)s/rss.xml" />
  </head>
  <body>
   <header>
@@ -111,7 +111,7 @@ def default_content(src):
 pages = [{
     'nav':    'Lolis',
     'header': 'The internet loli database',
-    'fname': 'index.html',
+    'fname':  'index.html',
     'func':   loli_list,
 },{
     'nav':    'FAQ',
