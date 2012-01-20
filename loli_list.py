@@ -192,4 +192,12 @@ lolis = [{
         ('Chii?',  'snd/Chobits-Chii-Chii.ogg'),
         ('Chiiii', 'snd/Chobits-Chii-Chiiii.ogg'),
     ],
+},{
+    'name': 'Erio Touwa',
+    'anime': 'Denpa Onna to Seishun Otoko',
+    'pic': 'img/Denpa_Onna_to_Seishun_Otoko-Erio_Touwa.png',
+    'cries': [
+        ('Pipipi pipipi',  'snd/Denpa_Onna_to_Seishun_Otoko-Erio_Touwa-pipipi-pipipi.ogg'),
+        ('Sapapapapapapa', 'snd/Denpa_Onna_to_Seishun_Otoko-Erio_Touwa-sapapapapapapa.ogg'),
+    ],
 }]
