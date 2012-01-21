@@ -15,7 +15,12 @@ How to add a cry?
     * Edit loli_list.py and add/edit the loli entry
     * Run `make && firefox www/index.html` and check if everything is fine
     * Commit the new loli with `git commit -a -m <commit message>`
-    * Add the loli upstream with a `git push`
+    * Request a merge (if you forked the project) or send a patch (`git
+      format-patch -1`)
+    * Wait for a review from a developer
+
+    Eventually, a developer will run `git push` on the main server with your
+    patch.
 
 
 How to edit a standard page?
