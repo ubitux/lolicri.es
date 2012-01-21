@@ -1,11 +1,3 @@
-Server configuration
-====================
-
-The `www/` directory is where the http server is "mounted". It contains all the
-images, cries, generated pages, etc. The web server should also be configured
-to redirect any 404 to `www/404.html`.
-
-
 How to add a cry?
 =================
 
@@ -40,21 +32,28 @@ How to change page information or the index page?
 Everything you need is in `gen.py`, just edit it and hack.
 
 
-What is the Git setup of lolicri.es?
-====================================
+What is the setup of lolicri.es?
+================================
 
 We have a shared bare repository in
 ``GITROOT=/home/$COMMON_GROUP/lolicri.es.git``. This is the repository cloned
-by the developers.
+by the developers, `$COMMON_GROUP` being a shared group between them.
 
-A cloned repository is located in ``WWWROOT=/home/$ADMIN_DEV/lolicri.es`` and
-the *DocumentRoot* of the httpd points on `$WWWROOT/www`.
+A cloned repository (from the `$GITROOT` bare one) is located in
+``WWWROOT=/home/$ADMIN_DEV/lolicri.es``. The *DocumentRoot* of the httpd points
+on `$WWWROOT/www`. This directory contains all the images, cries, generated
+pages, etc. The web server is also configured to redirect any 404 to
+`www/404.html`.
 
 Each time a developer pushes something, the script
 `$GITROOT/hooks/post-receive` is run. It contains the following code to update
 the `$WWWROOT` repository::
 
     #!/bin/sh
+
+    ADMIN_DEV=...
+    WWWROOT=/home/$ADMIN_DEV/lolicri.es
+
     read oldrev newrev refname
     [ "$refname" != "refs/heads/master" ] && exit 0
     cd $WWWROOT
