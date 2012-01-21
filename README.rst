@@ -23,7 +23,7 @@ How to edit a standard page?
 ============================
 
 All the pages content are located in the **src/** directory. Just edit them and
-follow the 3 last steps of the previous section.
+follow the last steps of the previous section.
 
 
 How to change page information or the index page?
