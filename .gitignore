@@ -1,2 +1,3 @@
 *.pyc
 www/*.html
+www/rss.xml
