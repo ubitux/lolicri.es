@@ -128,15 +128,16 @@ pages = [{
     'tpl':    TPL_RSS,
 }]
 
-def nav_gen(page_name):
+def nav_gen(base_url, page_name):
     nav = ''
     for page in pages:
         if 'nav' not in page: continue
         active = ' class="active"' if page_name.endswith(page['fname']) else ''
-        nav += '<li><a href="%s" %s>%s</a></li>' % (page['fname'], active, page['nav'])
+        nav += '<li><a href="%s/%s" %s>%s</a></li>' % (baseurl, page['fname'], active, page['nav'])
     return nav
 
 for page in pages:
+    baseurl = sys.argv[1]
     src = 'src/' + page['fname']
     dst = 'www/' + page['fname']
     print('Write %s' % dst)
@@ -145,6 +146,6 @@ for page in pages:
     data['content'] = page.get('func', default_content)(src)
     data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
     data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
-    data['nav'    ] = nav_gen(dst)
-    data['baseurl'] = sys.argv[1]
+    data['nav'    ] = nav_gen(baseurl, dst)
+    data['baseurl'] = baseurl
     open(dst, 'w').write(page.get('tpl', TPL_BASE) % data)
