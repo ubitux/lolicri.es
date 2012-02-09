@@ -200,4 +200,12 @@ lolis = [{
         ('Pipipi pipipi',  'snd/Denpa_Onna_to_Seishun_Otoko-Erio_Touwa-pipipi-pipipi.ogg'),
         ('Sapapapapapapa', 'snd/Denpa_Onna_to_Seishun_Otoko-Erio_Touwa-sapapapapapapa.ogg'),
     ],
+},{
+    'name': 'Agiri Goshiki',
+    'anime': 'Kill Me Baby',
+    'pic': 'img/Kill_Me_Baby-Agiri_Goshiki.png',
+    'cries': [
+        ('Uwaaaaah',           'snd/Kill_Me_Baby-Agiri_Goshiki-Uwaaaaah.ogg'),
+        ('Kawari mi no jutsu', 'snd/Kill_Me_Baby-Agiri_Goshiki-Kawari_Mi_No_Jutsu.ogg'),
+    ],
 }]
