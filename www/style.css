@@ -64,10 +64,7 @@ section {
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
-
     border-radius: 30px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
 }
 
 section#lolis>article { min-height: 18em; }
@@ -77,11 +74,7 @@ section#lolis>article>header {
     font-family: ReenieBeanie, 'Comic Sans MS';
     background-color: #76acde;
     border-radius: 30px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
     box-shadow: 2px 2px 1px 0 #333;
-    -moz-box-shadow: 2px 2px 1px 0 #333;
-    -webkit-box-shadow: 2px 2px 1px 0 #333;
 }
 
 section#faq dl>dt { margin : .6em 0 0 0; padding: 0; }
@@ -135,10 +128,7 @@ article>img {
     float: left;
     width: auto;
     margin-left: 1em;
-
     box-shadow: 10px 10px 5px 0 #222;
-    -moz-box-shadow: 10px 10px 5px 0 #222;
-    -webkit-box-shadow: 10px 10px 5px 0 #222;
 }
 
 section#lolis>article>dl { margin-left: 22em; }
