@@ -208,4 +208,12 @@ lolis = [{
         ('Uwaaaaah',           'snd/Kill_Me_Baby-Agiri_Goshiki-Uwaaaaah.ogg'),
         ('Kawari mi no jutsu', 'snd/Kill_Me_Baby-Agiri_Goshiki-Kawari_Mi_No_Jutsu.ogg'),
     ],
+},{
+    'name': 'Merle',
+    'anime': 'Escaflowne',
+    'pic': 'img/Escaflowne-Merle.png',
+    'cries': [
+        ('Nyaa',   'snd/Escaflowne-Merle-nyaa.ogg'),
+        ('Nyaaao', 'snd/Escaflowne-Merle-nyaaao.ogg'),
+    ],
 }]
