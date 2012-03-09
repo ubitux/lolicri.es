@@ -76,7 +76,8 @@ lolis = [{
     'anime': 'Paniponi Dash!',
     'pic': 'img/Paniponi-Dash-Himeko.png',
     'cries': [
-        ('Maho',         'snd/Paniponi-Dash-Himeko-Maho.ogg'),
+        ('Maho?',          'snd/Paniponi-Dash-Himeko-Maho.ogg'),
+        ('Maho maho maho', 'snd/Paniponi-Dash-Himeko-Maho-maho-maho.ogg'),
         ('Kawaii',       'snd/Paniponi-Dash-Himeko-Kawaii.ogg'),
         ('Omega Kawaii', 'snd/Paniponi-Dash-Himeko-Omega-Kawaii.ogg'),
     ],
