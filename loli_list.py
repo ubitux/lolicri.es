@@ -217,4 +217,11 @@ lolis = [{
         ('Nyaa',   'snd/Escaflowne-Merle-nyaa.ogg'),
         ('Nyaaao', 'snd/Escaflowne-Merle-nyaaao.ogg'),
     ],
+},{
+    'name': 'Minami Asakura',
+    'anime': 'Touch',
+    'pic': 'img/Touch-Minami-Asakura.png',
+    'cries': [
+        ('Gao', 'snd/Touch-Minami-Asakura-Gao.ogg'),
+    ],
 }]
