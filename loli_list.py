@@ -177,6 +177,8 @@ lolis = [{
         ('Eeeh',    'snd/Aria-Akari-Mizunashi-eeeh.ogg'),
         ('Eeehii',  'snd/Aria-Akari-Mizunashi-eeehii.ogg'),
         ('Eeeeeeh', 'snd/Aria-Akari-Mizunashi-eeeeeeh.ogg'),
+        ('Ahi',     'snd/Aria-Akari-Mizunashi-ahi.ogg'),
+        ('Aaahiii', 'snd/Aria-Akari-Mizunashi-aaahiii.ogg'),
     ],
 },{
     'name': 'Kirino',
