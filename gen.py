@@ -128,7 +128,7 @@ pages = [{
     'tpl':    TPL_RSS,
 }]
 
-def nav_gen(base_url, page_name):
+def nav_gen(baseurl, page_name):
     nav = ''
     for page in pages:
         if 'nav' not in page: continue
