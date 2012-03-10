@@ -136,11 +136,12 @@ def nav_gen(base_url, page_name):
         nav += '<li><a href="%s/%s" %s>%s</a></li>' % (baseurl, page['fname'], active, page['nav'])
     return nav
 
+baseurl = sys.argv[1] if len(sys.argv) > 1 else '.'
+print 'Using `%s` as base url' % baseurl
 for page in pages:
-    baseurl = sys.argv[1]
     src = 'src/' + page['fname']
     dst = 'www/' + page['fname']
-    print('Write %s' % dst)
+    print('Writing %s' % dst)
 
     data = {}
     data['content'] = page.get('func', default_content)(src)
