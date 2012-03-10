@@ -27,7 +27,7 @@ TPL_BASE = '''<!DOCTYPE html>
   %(content)s
   <footer>
    <p>Comment/Submit/Request: #/dev/null @ irc.yozora-irc.net</p>
-   <p class="loli❤">2010-2011 - The loli ❤ team</p>
+   <p class="loli❤">2010-2012 - The loli ❤ team</p>
   </footer>
  </body>
 </html>'''
