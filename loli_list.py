@@ -228,7 +228,7 @@ lolis = [{
     ],
 },{
     'name': 'Hinata Hakamada',
-    'anime': 'Ro-Kyu-Bu',
+    'anime': 'Ro-Kyu-Bu!',
     'pic': 'img/Ro-Kyu-Bu-Hinata.png',
     'cries': [
         ('Ooh',          'snd/Ro-Kyu-Bu-Hinata-Ooh.ogg'),
