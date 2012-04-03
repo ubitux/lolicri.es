@@ -234,4 +234,11 @@ lolis = [{
         ('Ooh',          'snd/Ro-Kyu-Bu-Hinata-Ooh.ogg'),
         ('Koala Attack', 'snd/Ro-Kyu-Bu-Hinata-Koala-Attack.ogg'),
     ],
+},{
+    'name': 'Misaki Nakahara',
+    'anime': 'NHK ni Youkoso!',
+    'pic': 'img/NHK-Misaki-Nakahara.png',
+    'cries': [
+        ('Nya', 'snd/NHK-Misaki-Nakahara-Nya.ogg'),
+    ],
 }]
