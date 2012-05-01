@@ -241,4 +241,11 @@ lolis = [{
     'cries': [
         ('Nya', 'snd/NHK-Misaki-Nakahara-Nya.ogg'),
     ],
+},{
+    'name': 'Aioi Yuuko',
+    'anime': 'Nichijou',
+    'pic': 'img/Nichijou-Aioi_Yuuko.png',
+    'cries': [
+        ('Selamat pagi !', 'snd/Nichijou-Aioi_Yuuko-Selamat_Pagi.ogg'),
+    ],
 }]
