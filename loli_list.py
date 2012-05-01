@@ -68,7 +68,7 @@ lolis = [{
     'anime': 'Popotan',
     'pic': 'img/Popotan-Mii.png',
     'cries': [
-        ('Puni Puni Da !',                      'snd/Popotan-Mii-Puni-Puni.ogg'),
+        ('Puni Puni Da!',                       'snd/Popotan-Mii-Puni-Puni.ogg'),
         ('Pikohan Magicalu, Parareru Magicalu', 'snd/Popotan-Mii-Pikohan-Magicalu-Parareru-Magicalu.ogg'),
     ],
 },{
@@ -86,8 +86,8 @@ lolis = [{
 #    'anime': 'Cardcaptor Sakura',
 #    'pic': 'img/Cardcaptor-Sakura-Sakura.png',
 #    'cries': [
-#        ('Release !',   'snd/Cardcaptor-Sakura-Sakura-Release.ogg'),
-#        ('Claw Card !', 'snd/Cardcaptor-Sakura-Sakura-Claw-Card.ogg'),
+#        ('Release!',   'snd/Cardcaptor-Sakura-Sakura-Release.ogg'),
+#        ('Claw Card!', 'snd/Cardcaptor-Sakura-Sakura-Claw-Card.ogg'),
 #    ],
 },{
     'name': 'Mao Onigawara',
@@ -101,14 +101,14 @@ lolis = [{
     'anime': 'Dennou Coil',
     'pic': 'img/Dennou-Coil-Kyouko.png',
     'cries': [
-        ('Unchi !', 'snd/Dennou-Coil-Kyouko-Unchi.ogg'),
+        ('Unchi!', 'snd/Dennou-Coil-Kyouko-Unchi.ogg'),
     ],
 },{
     'name': 'Dokuro Mitsukai',
     'anime': 'Bokusatsu Tenshi Dokuro-chan',
     'pic': 'img/Bludgeoning-Angel-Dokuro-Chan.png',
     'cries': [
-        ('Pipiru piru piru pipiru pi !', 'snd/Bludgeoning-Angel-Dokuro-Chan-Pipirupirupirupipirupi.ogg'),
+        ('Pipiru piru piru pipiru pi!', 'snd/Bludgeoning-Angel-Dokuro-Chan-Pipirupirupirupipirupi.ogg'),
     ],
 },{
     'name': 'Yuu Morisawa',
@@ -246,6 +246,6 @@ lolis = [{
     'anime': 'Nichijou',
     'pic': 'img/Nichijou-Aioi_Yuuko.png',
     'cries': [
-        ('Selamat pagi !', 'snd/Nichijou-Aioi_Yuuko-Selamat_Pagi.ogg'),
+        ('Selamat pagi!', 'snd/Nichijou-Aioi_Yuuko-Selamat_Pagi.ogg'),
     ],
 }]
