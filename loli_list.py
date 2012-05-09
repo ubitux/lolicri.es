@@ -248,4 +248,11 @@ lolis = [{
     'cries': [
         ('Selamat pagi!', 'snd/Nichijou-Aioi_Yuuko-Selamat_Pagi.ogg'),
     ],
+},{
+    'name': 'Nanako Mizuki',
+    'anime': 'GTO',
+    'pic': 'img/GTO-Mizuki_Nanako.png',
+    'cries': [
+        ('Yoo Poo!', 'snd/GTO-Mizuki_Nanako-Yoo_Poo.ogg'),
+    ],
 }]
