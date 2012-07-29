@@ -255,4 +255,12 @@ lolis = [{
     'cries': [
         ('Yoo Poo!', 'snd/GTO-Mizuki_Nanako-Yoo_Poo.ogg'),
     ],
+},{
+    'name': 'Shinobu Oshino',
+    'anime': 'Nisemonogatari',
+    'pic': 'img/Nisemonogatari-Shinobu.png',
+    'cries': [
+        ('Ka-ka', 'snd/Nisemonogatari-Shinobu-Kaka.ogg'),
+        ('K-ka',  'snd/Nisemonogatari-Shinobu-K-ka.ogg'),
+    ],
 }]
