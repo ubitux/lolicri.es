@@ -263,4 +263,11 @@ lolis = [{
         ('Ka-ka', 'snd/Nisemonogatari-Shinobu-Kaka.ogg'),
         ('K-ka',  'snd/Nisemonogatari-Shinobu-K-ka.ogg'),
     ],
+},{
+    'name': 'Akira Amatsume',
+    'anime': 'Yosuga no Sora',
+    'pic': 'img/Yosuga_no_Sora-Akira_Amatsume.png',
+    'cries': [
+        ('Muni muni muni', 'snd/Yosuga_no_Sora-Akira_Amatsume-munimunimuni.ogg'),
+    ],
 }]
