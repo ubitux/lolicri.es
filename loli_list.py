@@ -270,4 +270,11 @@ lolis = [{
     'cries': [
         ('Muni muni muni', 'snd/Yosuga_no_Sora-Akira_Amatsume-munimunimuni.ogg'),
     ],
+},{
+    'name': 'Yui Hirasawa',
+    'anime': 'K-On!',
+    'pic': 'img/K-On-Yui_Hirasawa.png',
+    'cries': [
+        ('Punipuni', 'snd/K-ON-Yui_Hirasawa-punipuni.ogg'),
+    ],
 }]
