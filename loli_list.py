@@ -277,4 +277,11 @@ lolis = [{
     'cries': [
         ('Punipuni', 'snd/K-ON-Yui_Hirasawa-punipuni.ogg'),
     ],
+},{
+    'name': 'Vivio Takamachi',
+    'anime': 'Magical Girl Lyrical Nanoha StrikerS',
+    'pic': 'img/Takamachi-Vivio.png',
+    'cries': [
+        ('Pueh', 'snd/Takamachi-Vivio-Pueh.ogg'),
+    ],
 }]
