@@ -284,4 +284,11 @@ lolis = [{
     'cries': [
         ('Pueh', 'snd/Takamachi-Vivio-Pueh.ogg'),
     ],
+},{
+    'name': 'Binchou-tan',
+    'anime': 'Binchou-tan',
+    'pic': 'img/Binchou-tan-Binchou-tan.png',
+    'cries': [
+        ('Hihaaa', 'snd/Binchou-tan-Binchou-tan-Hihaaa.ogg'),
+    ],
 }]
