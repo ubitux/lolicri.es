@@ -136,13 +136,7 @@ def nav_gen(baseurl, page_name):
         nav += '<li><a href="%s/%s" %s>%s</a></li>' % (baseurl, page['fname'], active, page['nav'])
     return nav
 
-baseurl = sys.argv[1] if len(sys.argv) > 1 else '.'
-print 'Using `%s` as base url' % baseurl
-for page in pages:
-    src = 'src/' + page['fname']
-    dst = 'www/' + page['fname']
-    print('Writing %s' % dst)
-
+def page_gen(page):
     data = {}
     data['content'] = page.get('func', default_content)(src)
     data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
@@ -150,3 +144,11 @@ for page in pages:
     data['nav'    ] = nav_gen(baseurl, dst)
     data['baseurl'] = baseurl
     open(dst, 'w').write(page.get('tpl', TPL_BASE) % data)
+
+baseurl = sys.argv[1] if len(sys.argv) > 1 else '.'
+print 'Using `%s` as base url' % baseurl
+for page in pages:
+    src = 'src/' + page['fname']
+    dst = 'www/' + page['fname']
+    print('Writing %s' % dst)
+    page.get('gen', page_gen)(page)
