@@ -4,6 +4,9 @@
 from loli_list import lolis
 import sys, unicodedata
 
+
+LOLI_PER_PAGE = 10
+
 TPL_BASE = '''<!DOCTYPE html>
 <html>
  <head>
@@ -73,13 +76,13 @@ def get_loli_anchor(loli):
     norm = unicodedata.normalize('NFKD', key.decode('utf-8')).encode('ascii', 'ignore')
     return '-'.join(norm.lower().split())
 
-def loli_list(src):
-    content = '<section id="lolis">'
-    for loli in lolis:
+def loli_list(src, start=0, count=0):
+    content = ''
+    for loli in lolis[start:start+count]:
         loli['cries'] = ''.join(TPL_CRY % cry for cry in loli['cries'])
         loli['anchor'] = get_loli_anchor(loli)
         content += TPL_LOLI % loli
-    content += '</section>'
+
     return content
 
 def rss_content(src):
@@ -93,6 +96,65 @@ def rss_content(src):
 
 def default_content(src):
     return open(src).read()
+
+def nav_gen(baseurl, page_name):
+    nav = ''
+    for page in pages:
+        if 'nav' not in page: continue
+        active = ' class="active"' if page_name.endswith(page['fname']) else ''
+        nav += '<li><a href="%s/%s" %s>%s</a></li>' % (baseurl, page['fname'], active, page['nav'])
+    return nav
+
+def page_gen(page, src, dst):
+    src = src + page['fname']
+    dst = dst + page['fname']
+    print('Writing %s' % dst)
+
+    data = {}
+    data['content'] = page.get('func', default_content)(src)
+    data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
+    data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
+    data['nav'    ] = nav_gen(baseurl, dst)
+    data['baseurl'] = baseurl
+    open(dst, 'w').write(page.get('tpl', TPL_BASE) % data)
+
+def loli_page_gen(page, src, dst):
+    def next_page(n, p):
+        if (n != (p-1)) and (p > 1):
+            url = '<a href="./index-%d.html">Next&thinsp;&gt;&gt;</a>' % (n+1)
+        else:
+            url = 'Next&thinsp;&gt;&gt;'
+        return '<li>%s</li>' % url
+
+    def prev_page(n, p):
+        if n == 0:
+            url = '&lt;&lt;&thinsp;Previous'
+        elif n == 1:
+            url ='<a href="./index.html">&lt;&lt;&thinsp;Previous</a>'
+        else:
+            url = '<a href="./index-%d.html">&lt;&lt;&thinsp;Previous</a>' % (n-1)
+        return '<li>%s</li>' % url
+
+    data = {}
+    data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
+    data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
+    data['baseurl'] = baseurl
+
+    l = len(lolis)
+    l = l/LOLI_PER_PAGE if (l%LOLI_PER_PAGE) == 0 else (l/LOLI_PER_PAGE) + 1
+    f, e = page['fname'].split('.')
+    for p in range(l):
+        if p == 0:
+            fname = page['fname']
+        else:
+            fname = "%s-%d.%s" % (f, p, e)
+
+        print('Writing %s' % dst + fname)
+
+        data['content'] = '<section id="lolis">%s</section>' % loli_list(src, p*LOLI_PER_PAGE, LOLI_PER_PAGE)
+        data['nav'    ] = prev_page(p, l) + nav_gen(baseurl, dst) + next_page(p, l)
+        open(dst + fname, 'w').write(page.get('tpl', TPL_BASE) % data)
+
 
 #
 #   Page generation
@@ -113,6 +175,7 @@ pages = [{
     'header': 'The internet loli database',
     'fname':  'index.html',
     'func':   loli_list,
+    'gen':   loli_page_gen,
 },{
     'nav':    'FAQ',
     'title':  'FAQ',
@@ -128,27 +191,10 @@ pages = [{
     'tpl':    TPL_RSS,
 }]
 
-def nav_gen(baseurl, page_name):
-    nav = ''
-    for page in pages:
-        if 'nav' not in page: continue
-        active = ' class="active"' if page_name.endswith(page['fname']) else ''
-        nav += '<li><a href="%s/%s" %s>%s</a></li>' % (baseurl, page['fname'], active, page['nav'])
-    return nav
-
-def page_gen(page):
-    data = {}
-    data['content'] = page.get('func', default_content)(src)
-    data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
-    data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
-    data['nav'    ] = nav_gen(baseurl, dst)
-    data['baseurl'] = baseurl
-    open(dst, 'w').write(page.get('tpl', TPL_BASE) % data)
 
 baseurl = sys.argv[1] if len(sys.argv) > 1 else '.'
 print 'Using `%s` as base url' % baseurl
 for page in pages:
-    src = 'src/' + page['fname']
-    dst = 'www/' + page['fname']
-    print('Writing %s' % dst)
-    page.get('gen', page_gen)(page)
+    src = 'src/'
+    dst = 'www/'
+    page.get('gen', page_gen)(page, src, dst)
