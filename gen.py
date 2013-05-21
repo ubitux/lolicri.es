@@ -135,6 +135,8 @@ def loli_page_gen(page, src, dst):
             url = '<a href="./index-%d.html">&lt;&lt;&thinsp;Previous</a>' % (n-1)
         return '<li>%s</li>' % url
 
+    lolis.reverse()
+
     data = {}
     data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
     data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
