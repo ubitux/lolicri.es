@@ -152,9 +152,11 @@ def loli_page_gen(page, src, dst):
             fname = "%s-%d.%s" % (f, p, e)
 
         print('Writing %s' % dst + fname)
-
-        data['content'] = '<section id="lolis">%s</section>' % loli_list(src, p*LOLI_PER_PAGE, LOLI_PER_PAGE)
-        data['nav'    ] = prev_page(p, l) + nav_gen(baseurl, dst) + next_page(p, l)
+        pp = prev_page(p, l)
+        np = next_page(p, l)
+        data['content']  = '<section id="lolis">%s</section>' % loli_list(src, p*LOLI_PER_PAGE, LOLI_PER_PAGE)
+        data['content'] += '<nav><ul>' + pp + '<li><a href="#lolis">*Top*</a></li>' + np + '</ul></nav>'
+        data['nav'    ]  = pp + nav_gen(baseurl, dst) + np
         open(dst + fname, 'w').write(page.get('tpl', TPL_BASE) % data)
 
 
