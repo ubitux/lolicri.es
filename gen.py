@@ -78,13 +78,17 @@ def get_loli_anchor(loli):
     norm = re.sub('[^\w\s-]', '', norm).strip().lower()
     return re.sub('[-\s]+', '-', norm)
 
+def loli_template(loli):
+    l = dict(loli)
+    l['cries'] = ''.join(TPL_CRY % cry for cry in l['cries'])
+    l['anchor'] = get_loli_anchor(l)
+    l['link']  = l['anchor'] + '.html'
+    return TPL_LOLI % l
+
 def loli_list(src, start=0, count=0):
     content = ''
     for loli in lolis[start:start+count]:
-        loli['cries'] = ''.join(TPL_CRY % cry for cry in loli['cries'])
-        loli['anchor'] = get_loli_anchor(loli)
-        loli['link']  = loli['anchor'] + '.html'
-        content += TPL_LOLI % loli
+        content += loli_template(loli)
     return content
 
 def rss_content(src):
@@ -120,7 +124,7 @@ def page_gen(page, src, dst):
     data['baseurl'] = baseurl
     open(dst, 'w').write(page.get('tpl', TPL_BASE) % data)
 
-def loli_page_gen(page, src, dst):
+def loli_index_gen(page, src, dst):
     def next_page(n, p):
         if (n != (p-1)) and (p > 1):
             url = '<a href="./index-%d.html">Next&thinsp;&gt;&gt;</a>' % (n+1)
@@ -161,6 +165,19 @@ def loli_page_gen(page, src, dst):
         data['nav'    ]  = pp + nav_gen(baseurl, dst) + np
         open(dst + fname, 'w').write(page.get('tpl', TPL_BASE) % data)
 
+def loli_page_gen(page, src, dst):
+    for loli in lolis:
+        fname = page['fname'] % (dst + get_loli_anchor(loli))
+        print('Writing %s' % fname)
+
+        data  = {}
+        lname = '%(name)s from %(anime)s' % loli
+        data['title'  ] = page['title'] % lname
+        data['header' ] = '<h2>%s</h2>' % lname
+        data['nav'    ] = nav_gen(baseurl, dst)
+        data['baseurl'] = baseurl
+        data['content'] = '<section id="lolis">%s</section>' % loli_template(loli)
+        open(fname, 'w').write(page.get('tpl', TPL_BASE) % data)
 
 #
 #   Page generation
@@ -172,6 +189,7 @@ def loli_page_gen(page, src, dst):
 #               The output file will be written in the www/ directory.
 #     'func':   the function to call to get the content. If not set, it will
 #               read the content of the source file using "fname".
+#     'gen':    the function to actually write the page.
 #     'header': what appears as a sub title on top of the page (not mandatory)
 #     'title':  HTML title tag content.
 #     'tpl':    template to use if not TPL_BASE
@@ -181,7 +199,7 @@ pages = [{
     'header': 'The internet loli database',
     'fname':  'index.html',
     'func':   loli_list,
-    'gen':   loli_page_gen,
+    'gen':    loli_index_gen,
 },{
     'nav':    'FAQ',
     'title':  'FAQ',
@@ -191,6 +209,10 @@ pages = [{
     'title':  'Page not found',
     'header': 'Maho?',
     'fname':  '404.html',
+},{
+    'title':  '%s - The internet loli database',
+    'fname':  '%s.html',
+    'gen':    loli_page_gen,
 },{
     'fname':  'rss.xml',
     'func':   rss_content,
