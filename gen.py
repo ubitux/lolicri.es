@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from loli_list import lolis
-import sys, unicodedata
+import re, sys, unicodedata
 
 
 LOLI_PER_PAGE = 10
@@ -71,10 +71,12 @@ TPL_RSS_ITEM = '''
   </item>
 '''
 
+
 def get_loli_anchor(loli):
     key  = '%(anime)s-%(name)s' % loli
     norm = unicodedata.normalize('NFKD', key.decode('utf-8')).encode('ascii', 'ignore')
-    return '-'.join(norm.lower().split())
+    norm = re.sub('[^\w\s-]', '', norm).strip().lower()
+    return re.sub('[-\s]+', '-', norm)
 
 def loli_list(src, start=0, count=0):
     content = ''
