@@ -43,7 +43,7 @@ TPL_LOLI = '''
 <article id="%(anchor)s">
  <header>
   <hgroup>
-   <h1><a href="#%(anchor)s">%(name)s</a></h1>
+   <h1><a href="%(link)s">%(name)s</a></h1>
    <h2>%(anime)s</h2>
   </hgroup>
  </header>
@@ -83,16 +83,16 @@ def loli_list(src, start=0, count=0):
     for loli in lolis[start:start+count]:
         loli['cries'] = ''.join(TPL_CRY % cry for cry in loli['cries'])
         loli['anchor'] = get_loli_anchor(loli)
+        loli['link']  = loli['anchor'] + '.html'
         content += TPL_LOLI % loli
-
     return content
 
 def rss_content(src):
     content = ''
     for loli in lolis[::-1]:
         loli['title'] = 'New wild loli appears: %s' % loli['name']
-        loli['link']  = 'http://lolicri.es/#' + get_loli_anchor(loli)
-        loli['guid']  = loli['link']
+        loli['guid']  = 'http://lolicri.es/' + get_loli_anchor(loli)
+        loli['link']  = loli['guid'] + '.html'
         content += TPL_RSS_ITEM % loli
     return content
 
