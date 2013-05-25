@@ -93,7 +93,7 @@ def loli_list(src, start=0, count=0):
 
 def rss_content(src):
     content = ''
-    for loli in lolis[::-1]:
+    for loli in lolis:
         loli['title'] = 'New wild loli appears: %s' % loli['name']
         loli['guid']  = 'loli-' + get_loli_anchor(loli)
         loli['link']  = 'http://lolicri.es/%s.html' % loli['guid']
