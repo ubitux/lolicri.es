@@ -290,6 +290,7 @@ lolis = [{
     'pic': 'img/Binchou-tan-Binchou-tan.png',
     'cries': [
         ('Hihaaa', 'snd/Binchou-tan-Binchou-tan-Hihaaa.ogg'),
+        ('Hiiaaa', 'snd/Binchou-tan-Binchou-tan-Hiiaaa.ogg'),
     ],
 },{
     'name': 'Ryoko Kaminagi',
