@@ -82,7 +82,7 @@ def loli_template(loli):
     l = dict(loli)
     l['cries'] = ''.join(TPL_CRY % cry for cry in l['cries'])
     l['anchor'] = get_loli_anchor(l)
-    l['link']  = l['anchor'] + '.html'
+    l['link']  = 'loli-' + l['anchor'] + '.html'
     return TPL_LOLI % l
 
 def loli_list(src, start=0, count=0):
@@ -167,7 +167,7 @@ def loli_index_gen(page, src, dst):
 
 def loli_page_gen(page, src, dst):
     for loli in lolis:
-        fname = page['fname'] % (dst + get_loli_anchor(loli))
+        fname = dst + page['fname'] % get_loli_anchor(loli)
         print('Writing %s' % fname)
 
         data  = {}
@@ -211,7 +211,7 @@ pages = [{
     'fname':  '404.html',
 },{
     'title':  '%s - The internet loli database',
-    'fname':  '%s.html',
+    'fname':  'loli-%s.html',
     'gen':    loli_page_gen,
 },{
     'fname':  'rss.xml',
