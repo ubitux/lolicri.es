@@ -95,8 +95,8 @@ def rss_content(src):
     content = ''
     for loli in lolis[::-1]:
         loli['title'] = 'New wild loli appears: %s' % loli['name']
-        loli['guid']  = 'http://lolicri.es/' + get_loli_anchor(loli)
-        loli['link']  = loli['guid'] + '.html'
+        loli['guid']  = 'loli-' + get_loli_anchor(loli)
+        loli['link']  = 'http://lolicri.es/%s.html' % loli['guid']
         content += TPL_RSS_ITEM % loli
     return content
 
