@@ -292,6 +292,13 @@ lolis = [{
         ('Hihaaa', 'snd/Binchou-tan-Binchou-tan-Hihaaa.ogg'),
     ],
 },{
+    'name': 'Ryoko Kaminagi',
+    'anime': 'Zegapain',
+    'pic': 'img/Zegapain-Kaminagi.png',
+    'cries': [
+        ('Buu', 'snd/Zegapain-Kaminagi-Buu.ogg'),
+    ],
+},{
     'name': 'Quon Kisaragi',
     'anime': 'RahXephon',
     'pic': 'img/RahXephon-Quon.png',
