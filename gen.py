@@ -7,7 +7,16 @@ import re, sys, unicodedata
 
 LOLI_PER_PAGE = 10
 
-TPL_BASE = '''<!DOCTYPE html>
+# make old links work
+ANCHOR_HACK = '''
+  <script type="text/javascript">
+    /* hack for old hash tag system */
+    hash = window.location.hash;
+    if (hash.length >= 2)
+      document.location = '%(baseurl)s/loli-' + hash.substr(1) + '.html'
+  </script>'''
+
+TPL_BASE_HEAD = '''<!DOCTYPE html>
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -15,7 +24,9 @@ TPL_BASE = '''<!DOCTYPE html>
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" type="text/css"            href="%(baseurl)s/style.css" />
   <link rel="icon"       type="image/png"           href="%(baseurl)s/favicon.png" />
-  <link rel="alternate"  type="application/rss+xml" href="%(baseurl)s/rss.xml" />
+  <link rel="alternate"  type="application/rss+xml" href="%(baseurl)s/rss.xml" />'''
+
+TPL_BASE_FOOT = '''
  </head>
  <body>
   <header>
@@ -34,6 +45,9 @@ TPL_BASE = '''<!DOCTYPE html>
   </footer>
  </body>
 </html>'''
+
+TPL_BASE    = TPL_BASE_HEAD +               TPL_BASE_FOOT
+TPL_BASE_JS = TPL_BASE_HEAD + ANCHOR_HACK + TPL_BASE_FOOT
 
 TPL_CRY = '''
 <dt>%s</dt>
@@ -200,6 +214,7 @@ pages = [{
     'fname':  'index.html',
     'func':   loli_list,
     'gen':    loli_index_gen,
+    'tpl':    TPL_BASE_JS,
 },{
     'nav':    'FAQ',
     'title':  'FAQ',
