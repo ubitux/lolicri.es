@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from loli_list import lolis
 import re, sys, unicodedata
+
+from loli_list import lolis
+from granny_list import grannies
 
 
 LOLI_PER_PAGE = 10
@@ -13,7 +15,7 @@ ANCHOR_HACK = '''
     /* hack for old hash tag system */
     hash = window.location.hash;
     if (hash.length >= 2)
-      document.location = '%(baseurl)s/loli-' + hash.substr(1) + '.html'
+      document.location = '%(baseurl)s/%(prefix)s' + hash.substr(1) + '.html'
   </script>'''
 
 TPL_BASE_HEAD = '''<!DOCTYPE html>
@@ -92,29 +94,30 @@ def get_loli_anchor(loli):
     norm = re.sub('[^\w\s-]', '', norm).strip().lower()
     return re.sub('[-\s]+', '-', norm)
 
-def loli_template(loli):
+def loli_template(loli, prefix=''):
     l = dict(loli)
     l['cries'] = ''.join(TPL_CRY % cry for cry in l['cries'])
     l['anchor'] = get_loli_anchor(l)
-    l['link']  = 'loli-' + l['anchor'] + '.html'
+    l['link']  = prefix + l['anchor'] + '.html'
     return TPL_LOLI % l
 
-def loli_list(src, start=0, count=0):
+def loli_list(src, start=0, count=0, prefix=''):
     content = ''
-    for loli in lolis[start:start+count]:
-        content += loli_template(loli)
+    for loli in src[start:start+count]:
+        content += loli_template(loli, prefix)
     return content
 
-def rss_content(src):
+def rss_content(src, param):
     content = ''
-    for loli in lolis:
-        loli['title'] = 'New wild loli appears: %s' % loli['name']
-        loli['guid']  = 'loli-' + get_loli_anchor(loli)
-        loli['link']  = 'http://lolicri.es/%s.html' % loli['guid']
-        content += TPL_RSS_ITEM % loli
+    for p in param:
+        for l in p['list']:
+            l['title'] = 'New wild loli appears: %s' % l['name']
+            l['guid']  = p['prefix'] + get_loli_anchor(l)
+            l['link']  = 'http://lolicri.es/%s.html' % l['guid']
+            content += TPL_RSS_ITEM % l
     return content
 
-def default_content(src):
+def default_content(src, param=None):
     return open(src).read()
 
 def nav_gen(baseurl, page_name):
@@ -125,20 +128,20 @@ def nav_gen(baseurl, page_name):
         nav += '<li><a href="%s/%s" %s>%s</a></li>' % (baseurl, page['fname'], active, page['nav'])
     return nav
 
-def page_gen(page, src, dst):
+def page_gen(page, src, dst, param=None):
     src = src + page['fname']
     dst = dst + page['fname']
     print('Writing %s' % dst)
 
     data = {}
-    data['content'] = page.get('func', default_content)(src)
+    data['content'] = page.get('func', default_content)(src, param)
     data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
     data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
     data['nav'    ] = nav_gen(baseurl, dst)
     data['baseurl'] = baseurl
     open(dst, 'w').write(page.get('tpl', TPL_BASE) % data)
 
-def loli_index_gen(page, src, dst):
+def loli_index_gen(page, src, dst, param=None):
     def next_page(n, p):
         if (n != (p-1)) and (p > 1):
             url = '<a href="./index-%d.html">Next&thinsp;&gt;&gt;</a>' % (n+1)
@@ -155,14 +158,15 @@ def loli_index_gen(page, src, dst):
             url = '<a href="./index-%d.html">&lt;&lt;&thinsp;Previous</a>' % (n-1)
         return '<li>%s</li>' % url
 
-    lolis.reverse()
+    ll = param['list']
+    ll.reverse()
 
     data = {}
     data['title'  ] = 'Loli Cries!' + (' - '+page['title'] if 'title' in page else '')
     data['header' ] = '<h2>%s</h2>' % page['header'] if 'header' in page else ''
     data['baseurl'] = baseurl
 
-    l = len(lolis)
+    l = len(ll)
     l = l/LOLI_PER_PAGE if (l%LOLI_PER_PAGE) == 0 else (l/LOLI_PER_PAGE) + 1
     f, e = page['fname'].split('.')
     for p in range(l):
@@ -174,13 +178,14 @@ def loli_index_gen(page, src, dst):
         print('Writing %s' % dst + fname)
         pp = prev_page(p, l)
         np = next_page(p, l)
-        data['content']  = '<section id="lolis">%s</section>' % loli_list(src, p*LOLI_PER_PAGE, LOLI_PER_PAGE)
+        data['content']  = '<section id="lolis">%s</section>' % loli_list(ll, p*LOLI_PER_PAGE, LOLI_PER_PAGE, param['prefix'])
         data['content'] += '<nav><ul>' + pp + '<li><a href="#lolis">*Top*</a></li>' + np + '</ul></nav>'
         data['nav'    ]  = pp + nav_gen(baseurl, dst) + np
+        data['prefix' ]  = param['prefix']
         open(dst + fname, 'w').write(page.get('tpl', TPL_BASE) % data)
 
-def loli_page_gen(page, src, dst):
-    for loli in lolis:
+def loli_page_gen(page, src, dst, param=None):
+    for loli in param['list']:
         fname = dst + page['fname'] % get_loli_anchor(loli)
         print('Writing %s' % fname)
 
@@ -191,6 +196,7 @@ def loli_page_gen(page, src, dst):
         data['nav'    ] = nav_gen(baseurl, dst)
         data['baseurl'] = baseurl
         data['content'] = '<section id="lolis">%s</section>' % loli_template(loli)
+        data['prefix' ] = param['prefix']
         open(fname, 'w').write(page.get('tpl', TPL_BASE) % data)
 
 #
@@ -212,9 +218,16 @@ pages = [{
     'nav':    'Lolis',
     'header': 'The internet loli database',
     'fname':  'index.html',
-    'func':   loli_list,
     'gen':    loli_index_gen,
     'tpl':    TPL_BASE_JS,
+    'param':  { 'list' : lolis, 'prefix' : 'loli-' },
+},{
+    'nav':    'Grannies',
+    'header': 'The internet (fadded) loli database',
+    'fname':  'grannies-index.html',
+    'gen':    loli_index_gen,
+    'tpl':    TPL_BASE_JS,
+    'param':  { 'list' : grannies, 'prefix' : 'granny-' },
 },{
     'nav':    'FAQ',
     'title':  'FAQ',
@@ -228,10 +241,19 @@ pages = [{
     'title':  '%s - The internet loli database',
     'fname':  'loli-%s.html',
     'gen':    loli_page_gen,
+    'param':  { 'list' : lolis, 'prefix' : 'loli-' },
+},{
+    'title':  '%s - The internet (fadded) loli database',
+    'fname':  'granny-%s.html',
+    'gen':    loli_page_gen,
+    'param':  { 'list' : grannies, 'prefix' : 'granny-' },
 },{
     'fname':  'rss.xml',
     'func':   rss_content,
     'tpl':    TPL_RSS,
+    'param':  [ { 'list' : lolis, 'prefix' : 'loli-' },
+                { 'list' : grannies, 'prefix' : 'granny-' },
+                ]
 }]
 
 
@@ -240,4 +262,4 @@ print 'Using `%s` as base url' % baseurl
 for page in pages:
     src = 'src/'
     dst = 'www/'
-    page.get('gen', page_gen)(page, src, dst)
+    page.get('gen', page_gen)(page, src, dst, page.get('param'))
