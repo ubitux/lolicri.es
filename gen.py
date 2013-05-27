@@ -111,7 +111,7 @@ def rss_content(src, param):
     content = ''
     for p in param:
         for l in p['list']:
-            l['title'] = 'New wild loli appears: %s' % l['name']
+            l['title'] = 'New wild %s appears: %s' % (p['kind'], l['name'])
             l['guid']  = p['prefix'] + get_loli_anchor(l)
             l['link']  = 'http://lolicri.es/%s.html' % l['guid']
             content += TPL_RSS_ITEM % l
@@ -251,8 +251,8 @@ pages = [{
     'fname':  'rss.xml',
     'func':   rss_content,
     'tpl':    TPL_RSS,
-    'param':  [ { 'list' : lolis, 'prefix' : 'loli-' },
-                { 'list' : grannies, 'prefix' : 'granny-' },
+    'param':  [ { 'list' : lolis, 'prefix' : 'loli-', 'kind' : 'loli' },
+                { 'list' : grannies, 'prefix' : 'granny-', 'kind' : 'granny'},
                 ]
 }]
 
