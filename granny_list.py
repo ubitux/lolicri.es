@@ -5,7 +5,7 @@ grannies = [{
     'anime': 'Neon Genesis Evangelion',
     'pic': 'img/Evangelion-Misato-Katsuragi.png',
     'cries': [
-        ('Kaaaa~', 'snd/Evangelion-Misato-Katsuragi-Kaaa.ogg'),
+        ('Kaaaa', 'snd/Evangelion-Misato-Katsuragi-Kaaa.ogg'),
     ],
 },{
     'name': 'Haruka Shitow',
