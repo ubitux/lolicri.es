@@ -203,7 +203,7 @@ def loli_page_gen(page, src, dst, param=None):
 #   Page generation
 #
 #     'nav':    URL name which appears in the navigation bar. If not set,
-#               the page won't appears in the bar.
+#               the page won't appear in the bar.
 #     'fname':  the source and destination filename. The source file must be
 #               located in the src/ directory but may not exist (see "func").
 #               The output file will be written in the www/ directory.
