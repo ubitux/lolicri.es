@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import re, sys, unicodedata
+import re, sys, unicodedata, json
 
 from loli_list import lolis
 from granny_list import grannies
@@ -199,6 +199,25 @@ def loli_page_gen(page, src, dst, param=None):
         data['prefix' ] = param['prefix']
         open(fname, 'w').write(page.get('tpl', TPL_BASE) % data)
 
+def search_index_gen(page, src, dst, param=None):
+    search_index = {}
+    fname = dst + page['fname']
+
+    print('Writing %s' % fname)
+
+    for p in param:
+        search_index[p['group']] = []
+        for loli in p['list']:
+            loli_index = { 'fname': '', 'keywords': [] }
+            loli_index['fname'] = p['prefix'] + get_loli_anchor(loli) + '.html'
+            loli_index['keywords'].append(loli['name'].strip().lower())
+            loli_index['keywords'].append(loli['anime'].strip().lower())
+            for cry in loli['cries']:
+                loli_index['keywords'].append(cry[0].strip().lower())
+            search_index[p['group']].append(loli_index)
+
+    open(fname, 'w').write(json.dumps(search_index))
+
 #
 #   Page generation
 #
@@ -253,6 +272,12 @@ pages = [{
     'tpl':    TPL_RSS,
     'param':  [ { 'list' : lolis, 'prefix' : 'loli-', 'kind' : 'loli' },
                 { 'list' : grannies, 'prefix' : 'granny-', 'kind' : 'granny'},
+                ]
+},{
+    'fname':  'search-index.json',
+    'gen':    search_index_gen,
+    'param':  [ { 'list' : lolis, 'prefix' : 'loli-', 'group' : 'lolis' },
+                { 'list' : grannies, 'prefix' : 'granny-', 'group' : 'grannies' },
                 ]
 }]
 
