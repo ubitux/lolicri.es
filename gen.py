@@ -26,7 +26,6 @@ TPL_BASE_HEAD = '''<!DOCTYPE html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>%(title)s</title>
-  <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" type="text/css"            href="%(baseurl)s/style.css" />
   <link rel="icon"       type="image/png"           href="%(baseurl)s/favicon.png" />
   <link rel="alternate"  type="application/rss+xml" href="%(baseurl)s/rss.xml" />'''
