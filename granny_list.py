@@ -14,4 +14,11 @@ grannies = [{
     'cries': [
         ('Nyaa nyaa', 'snd/RahXephon-Haruka-Nyaa-nyaa.ogg'),
     ],
+},{
+    'name': 'Yukari Tanizaki',
+    'anime': 'Azumanga Daioh',
+    'pic': 'img/Azumanga_Daioh-Yukari-Tanizaki.png',
+    'cries': [
+        ('Umai!', 'snd/Azumanga_Daioh-Yukari-Tanizaki-Umai.ogg'),
+    ],
 }]
