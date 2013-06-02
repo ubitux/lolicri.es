@@ -1,3 +1,4 @@
 *.pyc
 www/*.html
 www/rss.xml
+www/search-index.json
