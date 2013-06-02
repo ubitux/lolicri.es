@@ -183,7 +183,7 @@ def loli_index_gen(page, src, dst, param=None):
         np = next_page(p, l)
         data['content']  = '<section id="lolis">%s</section>' % loli_list(ll, p*LOLI_PER_PAGE, LOLI_PER_PAGE, param['prefix'])
         data['content'] += '<nav><ul>' + pp + '<li><a href="#lolis">*Top*</a></li>' + np + '</ul></nav>'
-        data['nav'    ]  = pp + nav_gen(baseurl, dst) + np
+        data['nav'    ]  = pp + nav_gen(baseurl, page['fname']) + np
         data['prefix' ]  = param['prefix']
         open(dst + fname, 'w').write(page.get('tpl', TPL_BASE) % data)
 
@@ -246,7 +246,7 @@ pages = [{
 },{
     'nav':    'Grannies',
     'header': 'The internet (fadded) loli database',
-    'fname':  'grannies-index.html',
+    'fname':  'index-grannies.html',
     'gen':    loli_index_gen,
     'tpl':    TPL_BASE_JS,
     'param':  { 'list' : grannies, 'prefix' : 'granny-' },
