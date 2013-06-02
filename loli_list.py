@@ -306,4 +306,11 @@ lolis = [{
     'cries': [
         ('Lala', 'snd/RahXephon-Quon-Kisaragi-Lala.ogg'),
     ],
+},{
+    'name': 'Iroe Genma',
+    'anime': 'Plastic Nee-san',
+    'pic': 'img/Plastic_Nee_san-Iroe_Genma.png',
+    'cries': [
+        ('Oula oula oula oula', 'snd/Plastic_Nee_san-Iroe_Genma-oulaoulaoula.ogg'),
+    ],
 }]
