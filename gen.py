@@ -145,20 +145,20 @@ def page_gen(page, src, dst, param=None):
     open(dst, 'w').write(page.get('tpl', TPL_BASE) % data)
 
 def loli_index_gen(page, src, dst, param=None):
-    def next_page(n, p):
+    def next_page(b, n, p):
         if (n != (p-1)) and (p > 1):
-            url = '<a href="./index-%d.html">Next&thinsp;&gt;&gt;</a>' % (n+1)
+            url = '<a href="./%s-%d.html">Next&thinsp;&gt;&gt;</a>' % (b, n+1)
         else:
             url = 'Next&thinsp;&gt;&gt;'
         return '<li>%s</li>' % url
 
-    def prev_page(n, p):
+    def prev_page(b, n, p):
         if n == 0:
             url = '&lt;&lt;&thinsp;Previous'
         elif n == 1:
-            url ='<a href="./index.html">&lt;&lt;&thinsp;Previous</a>'
+            url ='<a href="./%s.html">&lt;&lt;&thinsp;Previous</a>' % b
         else:
-            url = '<a href="./index-%d.html">&lt;&lt;&thinsp;Previous</a>' % (n-1)
+            url = '<a href="./%s-%d.html">&lt;&lt;&thinsp;Previous</a>' % (b, n-1)
         return '<li>%s</li>' % url
 
     ll = param['list']
@@ -179,8 +179,8 @@ def loli_index_gen(page, src, dst, param=None):
             fname = "%s-%d.%s" % (f, p, e)
 
         print('Writing %s' % dst + fname)
-        pp = prev_page(p, l)
-        np = next_page(p, l)
+        pp = prev_page(f, p, l)
+        np = next_page(f, p, l)
         data['content']  = '<section id="lolis">%s</section>' % loli_list(ll, p*LOLI_PER_PAGE, LOLI_PER_PAGE, param['prefix'])
         data['content'] += '<nav><ul>' + pp + '<li><a href="#lolis">*Top*</a></li>' + np + '</ul></nav>'
         data['nav'    ]  = pp + nav_gen(baseurl, page['fname']) + np
