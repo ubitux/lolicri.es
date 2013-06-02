@@ -199,7 +199,7 @@ def loli_page_gen(page, src, dst, param=None):
         data['header' ] = '<h2>%s</h2>' % lname
         data['nav'    ] = nav_gen(baseurl, dst)
         data['baseurl'] = baseurl
-        data['content'] = '<section id="lolis">%s</section>' % loli_template(loli)
+        data['content'] = '<section id="lolis">%s</section>' % loli_template(loli, param['prefix'])
         data['prefix' ] = param['prefix']
         open(fname, 'w').write(page.get('tpl', TPL_BASE) % data)
 
