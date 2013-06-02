@@ -286,7 +286,7 @@ pages = [{
 },{
     'nav':    'Search',
     'title':  'Search',
-    'header': 'Search a loli',
+    'header': 'Stalk a loli',
     'tpl':    TPL_SEARCH,
     'fname':  'search.html',
 }]
