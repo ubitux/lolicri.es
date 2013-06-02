@@ -67,10 +67,10 @@ section {
     border-radius: 30px;
 }
 
-section#lolis>article { min-height: 18em; }
-section#lolis>article a { text-decoration: none; color: black; }
-section#lolis a:hover { color: #404040; }
-section#lolis>article>header {
+section#lolis>article,div#results>article { min-height: 18em; }
+section#lolis>article a,div#results>article a { text-decoration: none; color: black; }
+section#lolis a:hover,div#results a:hover { color: #404040; }
+section#lolis>article>header,div#results>article>header {
     font-family: ReenieBeanie, 'Comic Sans MS';
     background-color: #76acde;
     border-radius: 30px;
@@ -131,7 +131,7 @@ article>img {
     box-shadow: 10px 10px 5px 0 #222;
 }
 
-section#lolis>article>dl { margin-left: 22em; }
+section#lolis>article>dl,div#results>article>dl { margin-left: 22em; }
 
 article>dl>dt,article>dl>dd {margin: 0; padding: 0; }
 article>dl>dt {
@@ -146,6 +146,53 @@ article>dl>dd audio {
     width: 354px;
     border: none;
     margin-top: -2.6em;
+}
+
+section#search>div#form {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+section#search>div#form>input#search-input {
+    display: block;
+    background-color: #bacdde;
+    margin: auto;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+    font-family: JoyfulJuliana, 'Comic Sans MS';
+    font-weight: bold;
+    font-size: 2em;
+    width: 100%;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px #72aade;
+}
+
+section#search>div#form>label {
+    font-family: JoyfulJuliana, 'Comic Sans MS';
+    margin-right: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+section#search>div#form>label:before {
+    content: " ♡ ";
+    color: palevioletred;
+    font-size: .8em;
+    text-shadow: 0px 0px 2px black;
+}
+
+section#search>div#form>input[type="checkbox"] {
+    display: none;
+}
+
+section#search>div#form>input[type="checkbox"]:checked + label {
+    font-weight: bold;
+}
+
+section#search>div#form>input[type="checkbox"]:checked + label:before {
+    content: " ❤ ";
+    text-shadow: 0px 0px 2px black;
 }
 
 p.loli❤ { font-size: 1.1em; font-family: JoyfulJuliana, 'Comic Sans MS'; }

@@ -18,6 +18,9 @@ ANCHOR_HACK = '''
       document.location = '%(baseurl)s/%(prefix)s' + hash.substr(1) + '.html'
   </script>'''
 
+SEARCH_JS = '''
+  <script type="text/javascript" src="search.js"></script>'''
+
 TPL_BASE_HEAD = '''<!DOCTYPE html>
 <html>
  <head>
@@ -50,6 +53,7 @@ TPL_BASE_FOOT = '''
 
 TPL_BASE    = TPL_BASE_HEAD +               TPL_BASE_FOOT
 TPL_BASE_JS = TPL_BASE_HEAD + ANCHOR_HACK + TPL_BASE_FOOT
+TPL_SEARCH  = TPL_BASE_HEAD + SEARCH_JS + TPL_BASE_FOOT
 
 TPL_CRY = '''
 <dt>%s</dt>
@@ -279,6 +283,12 @@ pages = [{
     'param':  [ { 'list' : lolis, 'prefix' : 'loli-', 'group' : 'lolis' },
                 { 'list' : grannies, 'prefix' : 'granny-', 'group' : 'grannies' },
                 ]
+},{
+    'nav':    'Search',
+    'title':  'Search',
+    'header': 'Search a loli',
+    'tpl':    TPL_SEARCH,
+    'fname':  'search.html',
 }]
 
 
