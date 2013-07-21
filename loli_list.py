@@ -313,4 +313,11 @@ lolis = [{
     'cries': [
         ('Oula oula oula oula', 'snd/Plastic_Nee_san-Iroe_Genma-oulaoulaoula.ogg'),
     ],
+},{
+    'name': 'Mina Nakanotani',
+    'anime': 'Air Master',
+    'pic': 'img/Air-Master-Nakanotani-Mina.png',
+    'cries': [
+        ('MOOOOoooo', 'snd/Air-Master-Nakanotani-Mina.ogg'),
+    ],
 }]
