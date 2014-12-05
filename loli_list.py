@@ -320,4 +320,13 @@ lolis = [{
     'cries': [
         ('MOOOOoooo', 'snd/Air-Master-Nakanotani-Mina.ogg'),
     ],
+},{
+    'name': 'Neko',
+    'anime': 'Bakemonogatari',
+    'pic': 'img/Bakemonogatari-Neko.png',
+    'cries': [
+        ('Nyaann', 'snd/Bakemonogatari-Neko-nyaann.ogg'),
+        ('Nyahahahaha', 'snd/Bakemonogatari-Neko-nyahahahaha.ogg'),
+        ('Nyanyame nyanyaju nyanyado nyanyabi de nyaku nyaku nyanyaku nyanyahanya nyanyanyai nyan nyanku nyarabe nyanyame', 'snd/Bakemonogatari-Neko-nyanyamenyanyajunyanyadonyanyabidenyakunyakunyanyakunyanyahanyanyanyanyainyannyankunyarabenyanyame.ogg'),
+    ],
 }]
