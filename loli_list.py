@@ -329,4 +329,11 @@ lolis = [{
         ('Nyahahahaha', 'snd/Bakemonogatari-Neko-nyahahahaha.ogg'),
         ('Nyanyame nyanyaju nyanyado nyanyabi de nyaku nyaku nyanyaku nyanyahanya nyanyanyai nyan nyanku nyarabe nyanyame', 'snd/Bakemonogatari-Neko-nyanyamenyanyajunyanyadonyanyabidenyakunyakunyanyakunyanyahanyanyanyanyainyannyankunyarabenyanyame.ogg'),
     ],
+},{
+    'name': 'Nanashi',
+    'anime': 'Ping Pong the Animation',
+    'pic': 'img/ping-pong-nanashi.gif',
+    'cries': [
+        ('WAAAAaaa', 'snd/ping-pong-nanashi-waaaaa.ogg'),
+    ],
 }]
